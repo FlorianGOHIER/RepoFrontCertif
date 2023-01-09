@@ -3,8 +3,17 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-ui',
   templateUrl: './ui.component.html',
-  styleUrls: ['./ui.component.scss']
+  styleUrls: ['./ui.component.scss'],
 })
 export class UiComponent {
+  public close: boolean = false;
+  public lum: boolean = false;
 
+  public toggle() {
+    this.close = !this.close;
+  }
+
+  public jourNuit() {
+    this.lum = !this.lum;
+  }
 }

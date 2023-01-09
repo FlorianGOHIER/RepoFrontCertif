@@ -1,1 +1,35 @@
-<p>ui works!</p>
+<header [ngClass]="{'headerNight': lum}" class="fixed-top">
+
+  <ng-content *ngIf="!lum" select=".tr-header"></ng-content>
+  <ng-content *ngIf="lum" select=".tr-header"></ng-content>
+
+  <div class="header2">
+    <span (click)="toggle()">
+      <ng-content *ngIf="close" select=".tr-open"></ng-content>
+      <ng-content *ngIf="!close" select=".tr-close"></ng-content>
+    </span>
+
+    <span (click)="jourNuit()">
+      <ng-content *ngIf="lum" select=".tr-nuit"></ng-content>
+      <ng-content *ngIf="!lum" select=".tr-jour"></ng-content>
+    </span>
+  </div>
+
+</header>
+
+<main [ngClass]="{'mainNight': lum}" class="d-flex">
+  <nav [ngClass]="{'navNight': lum}" [ngClass]="{'close-nav': close}">
+    <ng-content select=".tr-nav"></ng-content>
+  </nav>
+
+  <div class="shadow" *ngIf="!close" (click)="toggle()"></div>
+
+  <div class="content  d-flex flex-column flex-grow-1">
+    <div class="post flex-grow-1">
+      <ng-content select=".tr-content"></ng-content>
+    </div>
+    <footer [ngClass]="{'footerNight': lum}">
+      <ng-content select=".tr-footer"></ng-content>
+    </footer>
+  </div>
+</main>

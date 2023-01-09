@@ -1,0 +1,78 @@
+@import '../../../stylings/layout';
+
+header {
+  height: 80px;
+  background: var(--app-light-head);
+  color: black;
+}
+.headerNight{
+  background: var(--app-dark-head);
+  color: white;
+}
+main {
+  padding-top: 80px;
+  height: 100%;
+  background: var(--app-light);
+  color: black;
+}
+.mainNight{
+  background: var(--app-dark);
+  color: white;
+}
+nav {
+  width: 200px;
+  position: fixed;
+  height: calc(100vh - 80px);
+  background: var(--app-light-nav);
+  z-index:1;
+  transition: 500ms;
+  color: black;
+}
+.navNight {
+  background: var(--app-dark-nav);
+  color: white;
+}
+footer {
+  height: 100px;
+  background-color: var(--app-light-footer);
+  color: black;
+}
+.footerNight{
+  background: var(--app-dark-footer);
+  color: white;
+}
+table {
+  color: black;
+}
+.header2{
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 10px;
+  font-size: 2em;
+}
+.close-nav {
+  width: 15px;
+  overflow: hidden;
+}
+.shadow {
+  position: fixed;
+  width: 100%;
+  top: 80px;
+  left: 0;
+  height: calc(100vh - 80px);
+  background: rgba(0,0,0,0.5);
+
+}
+.post {
+  overflow:auto;
+}
+
+@media(min-width: $md-breakpoint) {
+  nav {
+    position: inherit;
+  }
+  .shadow {
+    display: none;
+  }
+}
