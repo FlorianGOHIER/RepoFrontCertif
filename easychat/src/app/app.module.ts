@@ -9,13 +9,7 @@ import { CoreModule } from './core/core.module';
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    CoreModule,
-    FontAwesomeModule,
-    NgbModule,
-  ],
+  imports: [BrowserModule, AppRoutingModule, CoreModule, NgbModule],
   providers: [],
   bootstrap: [AppComponent],
 })
