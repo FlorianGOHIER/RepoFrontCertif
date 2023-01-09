@@ -1,3 +1,4 @@
+<app-btn [label]="'All Channels'" [link]="'channel/all'"></app-btn><br>
 <div *ngIf="collection$ |async as collection">
   <ul class="nav flex-column" *ngFor="let channel of collection">
     <li class="nav-item">
@@ -5,3 +6,4 @@
     </li>
   </ul>
 </div>
+<app-btn [label]="'Add'" [link]="'channel/add'"></app-btn>

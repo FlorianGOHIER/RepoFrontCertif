@@ -6,10 +6,11 @@ import { NavComponent } from './components/nav/nav.component';
 import { IconsModule } from '../icons/icons.module';
 import { LoginModule } from '../login/login.module';
 import { UiModule } from '../ui/ui.module';
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
   declarations: [FooterComponent, HeaderComponent, NavComponent],
-  imports: [CommonModule],
+  imports: [CommonModule, SharedModule],
   exports: [
     FooterComponent,
     HeaderComponent,
