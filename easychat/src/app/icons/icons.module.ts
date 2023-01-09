@@ -6,8 +6,7 @@ import { IconEditComponent } from './components/icon-edit/icon-edit.component';
 import { IconNavComponent } from './components/icon-nav/icon-nav.component';
 import { IconDayComponent } from './components/icon-day/icon-day.component';
 import { IconNightComponent } from './components/icon-night/icon-night.component';
-
-
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [
@@ -16,18 +15,16 @@ import { IconNightComponent } from './components/icon-night/icon-night.component
     IconEditComponent,
     IconNavComponent,
     IconDayComponent,
-    IconNightComponent
+    IconNightComponent,
   ],
-  imports: [
-    CommonModule
-  ],
+  imports: [CommonModule, FontAwesomeModule],
   exports: [
     IconCloseComponent,
     IconDeleteComponent,
     IconEditComponent,
     IconNavComponent,
     IconDayComponent,
-    IconNightComponent
-  ]
+    IconNightComponent,
+  ],
 })
-export class IconsModule { }
+export class IconsModule {}

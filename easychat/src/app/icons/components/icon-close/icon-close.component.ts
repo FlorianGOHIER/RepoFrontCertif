@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { IconDefinition } from '@fortawesome/fontawesome-svg-core';
+import { faCircleXmark } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-icon-close',
@@ -6,5 +8,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./icon-close.component.scss']
 })
 export class IconCloseComponent {
+  public myIcon: IconDefinition;
 
+  constructor() {
+    this.myIcon = faCircleXmark;
+  }
 }
