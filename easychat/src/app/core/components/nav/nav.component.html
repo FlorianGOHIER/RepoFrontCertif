@@ -1,1 +1,7 @@
-<p>nav works!</p>
+<div *ngIf="collection$ |async as collection">
+  <ul class="nav flex-column" *ngFor="let channel of collection">
+    <li class="nav-item">
+      <a class="nav-link" routerLink="" routerLinkActive="active">{{channel.name}}</a>
+    </li>
+  </ul>
+</div>
