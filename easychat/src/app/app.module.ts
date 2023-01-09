@@ -6,10 +6,11 @@ import { AppComponent } from './app.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { CoreModule } from './core/core.module';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [BrowserModule, AppRoutingModule, CoreModule, NgbModule],
+  imports: [BrowserModule, AppRoutingModule, CoreModule, NgbModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent],
 })
