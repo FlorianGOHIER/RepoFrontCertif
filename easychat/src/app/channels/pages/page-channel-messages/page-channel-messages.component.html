@@ -8,6 +8,14 @@
     <!-- Formulaire, création de message -->
     <div>
 
+      <form [formGroup]="form" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+          <label for="text">Message:</label>
+          <input type="text" class="form-control" id="text" formControlName="text">
+        </div>
+        <app-btn type="submit" label="Submit"></app-btn>
+      </form>
+
     </div>
 
   </div>

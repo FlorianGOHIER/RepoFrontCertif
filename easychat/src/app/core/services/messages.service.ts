@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, Observable, tap } from 'rxjs';
 import { environment } from 'src/environment/environment';
 import { Message } from '../models/message';
 
@@ -23,4 +23,18 @@ export class MessagesService {
         this.collection$.next(data);
       });
   }
+
+  public update(message: Message): Observable<Message> {
+    return this.httpClient.put<Message>(`${this.urlApi}/message`, message);
+  }
+
+  public add(message: Message): Observable<Message> {
+    return this.httpClient.post<Message>(`${this.urlApi}/message`, message);
+  }
+
+  // public delete(message: Message): Observable<Message> {
+  //   return this.httpClient
+  //     .delete<Message>(`${this.urlApi}/message`,message)
+  //     .pipe(tap(() => this.refreshCollection(message.id)));
+  // }
 }
