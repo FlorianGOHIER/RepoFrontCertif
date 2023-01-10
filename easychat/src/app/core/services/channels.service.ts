@@ -17,4 +17,8 @@ export class ChannelsService {
     this.collection$ = this.httpClient.get<Channel[]>(`${this.urlApi}/channel`);
     //console.log(this.collection$);
   }
+
+  getChannelById(id: number): Observable<Channel> {
+    return this.httpClient.get<Channel>(`${this.urlApi}/channel/${id}`);
+  }
 }

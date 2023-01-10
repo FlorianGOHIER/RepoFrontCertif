@@ -1,1 +1,14 @@
-<p>page-channel-messages works!</p>
+<!-- <div > -->
+<app-template-full-width [title]="channel.name" *ngIf="channel$|async as channel">
+  <div *ngIf="collection$ |async as collection">
+    <!-- Affichage des messages -->
+    <div *ngFor="let message of collection">
+      {{message.text}}
+    </div>
+    <!-- Formulaire, création de message -->
+    <div>
+
+    </div>
+
+  </div>
+</app-template-full-width>

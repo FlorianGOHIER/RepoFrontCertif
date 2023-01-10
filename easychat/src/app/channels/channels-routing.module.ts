@@ -5,9 +5,9 @@ import { PageAllChannelsComponent } from './pages/page-all-channels/page-all-cha
 import { PageChannelMessagesComponent } from './pages/page-channel-messages/page-channel-messages.component';
 
 const routes: Routes = [
-  { path: ':id', component: PageChannelMessagesComponent },
   { path: 'add', component: PageAddChannelComponent },
   { path: 'all', component: PageAllChannelsComponent },
+  { path: ':id', component: PageChannelMessagesComponent },
 ];
 
 @NgModule({
