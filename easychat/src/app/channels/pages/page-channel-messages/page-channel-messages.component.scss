@@ -1,0 +1,19 @@
+.allMessages{
+  display: flex table-column;
+  // align-content: flex-end;
+  // float: center;
+  // margin: auto;
+  align-content: center;
+  margin-left: 10px;
+}
+.messageCapsule{
+  overflow: hidden;
+  white-space: pre-wrap;
+  border: 1px solid black;
+  border-radius: 10px;
+  background-color: antiquewhite;
+  padding: 1rem;
+  margin: 10px;
+  text-align: left;
+  width: 100vh;
+}
