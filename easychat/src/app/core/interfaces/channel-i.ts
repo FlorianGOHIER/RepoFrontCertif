@@ -3,6 +3,6 @@ export interface ChannelI {
   name: string;
   description: string;
   ownerId: number;
-  created_at: Date;
-  updated_at: Date;
+  createdAt: Date;
+  updatedAt: Date;
 }

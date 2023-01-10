@@ -5,6 +5,6 @@ export class Message implements MessageI {
   public text!: Text;
   public userId = 13;
   public channelId!: number;
-  public created_at!: Date;
-  public updated_at!: Date;
+  public createdAt!: Date;
+  public updatedAt!: Date;
 }

@@ -5,6 +5,6 @@ export class Channel implements ChannelI {
   public name!: string;
   public description!: string;
   public ownerId = 2;
-  public created_at!: Date;
-  public updated_at!: Date;
+  public createdAt!: Date;
+  public updatedAt!: Date;
 }
