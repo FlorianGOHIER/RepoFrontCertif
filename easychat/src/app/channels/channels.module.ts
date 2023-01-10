@@ -5,22 +5,19 @@ import { ChannelsRoutingModule } from './channels-routing.module';
 import { PageChannelMessagesComponent } from './pages/page-channel-messages/page-channel-messages.component';
 import { PageAllChannelsComponent } from './pages/page-all-channels/page-all-channels.component';
 import { PageAddChannelComponent } from './pages/page-add-channel/page-add-channel.component';
-
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
   declarations: [
     PageChannelMessagesComponent,
     PageAllChannelsComponent,
-    PageAddChannelComponent
+    PageAddChannelComponent,
   ],
-  imports: [
-    CommonModule,
-    ChannelsRoutingModule
-  ],
+  imports: [CommonModule, ChannelsRoutingModule, SharedModule],
   exports: [
     PageChannelMessagesComponent,
     PageAllChannelsComponent,
-    PageAddChannelComponent
-  ]
+    PageAddChannelComponent,
+  ],
 })
-export class ChannelsModule { }
+export class ChannelsModule {}
