@@ -15,9 +15,8 @@ import { MessagesService } from 'src/app/core/services/messages.service';
 export class PageChannelMessagesComponent {
   public collection$!: BehaviorSubject<Message[]>;
   public channel$!: Observable<Channel>;
-  public form: FormGroup;
-  public message: Message;
-  public channelId!: number;
+  public form!: FormGroup;
+  public message!: Message;
 
   constructor(
     private messagesService: MessagesService,
@@ -30,12 +29,12 @@ export class PageChannelMessagesComponent {
       this.messagesService.refreshCollection(id);
       this.collection$ = this.messagesService.collection$;
       this.channel$ = this.channelsService.getChannelById(id);
-      this.channelId = id;
 
       this.message = new Message();
       this.form = this.formBuilder.group({
         text: [this.message.text],
         channelId: [id],
+        userId: [this.message.userId],
       });
     });
   }
@@ -45,8 +44,6 @@ export class PageChannelMessagesComponent {
   // }
 
   public onSubmit() {
-    let message: Message = this.form.value;
-    message.channelId = this.channel$.id;
     this.messagesService.add(this.form.value).subscribe();
   }
 }

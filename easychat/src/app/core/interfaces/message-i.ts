@@ -3,6 +3,6 @@ export interface MessageI {
   text: Text;
   userId: number;
   channelId: number;
-  created_at: Date;
-  updated_at: Date;
+  createdAt: Date;
+  updatedAt: Date;
 }
