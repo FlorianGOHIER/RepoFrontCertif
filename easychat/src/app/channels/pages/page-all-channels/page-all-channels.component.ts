@@ -24,6 +24,6 @@ export class PageAllChannelsComponent {
   }
 
   public deleteChannel(channel: Channel) {
-    this.service.delete(channel);
+    this.service.delete(channel).subscribe();
   }
 }
