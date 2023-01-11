@@ -1,1 +1,14 @@
-<p>page-add-channel works!</p>
+<app-template-container title="Ajouter une channel">
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="prestaType">Type</label>
+      <input type="text" placeholder="Nom du canal..." class="form-control" id="name" formControlName="name">
+    </div>
+    <div class="form-group">
+      <textarea rows="5" placeholder="Saisissez la description du canal..." class="form-control" id="description"
+        formControlName="description"></textarea>
+    </div>
+
+    <app-btn type="submit" label="Envoyer"></app-btn>
+  </form>
+</app-template-container>
