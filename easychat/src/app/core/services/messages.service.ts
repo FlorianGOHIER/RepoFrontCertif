@@ -29,7 +29,13 @@ export class MessagesService {
   }
 
   public add(message: Message): Observable<Message> {
-    return this.httpClient.post<Message>(`${this.urlApi}/message`, message);
+    return this.httpClient
+      .post<Message>(`${this.urlApi}/message`, message)
+      .pipe(
+        tap(() => {
+          this.refreshCollection(message.channelId);
+        })
+      );
   }
 
   public getMessageById(id: number) {
