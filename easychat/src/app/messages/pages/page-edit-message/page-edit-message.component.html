@@ -1,0 +1,9 @@
+<app-template-container title="Editer une commande">
+  <form [formGroup]="form" (ngSubmit)="onSubmit()" *ngIf="message$ | async">
+    <div class="form-group">
+      <textarea rows="5" placeholder="Saisissez votre message..." class="form-control" id="text"
+        formControlName="text"></textarea>
+    </div>
+    <app-btn type="submit" label="Envoyer"></app-btn>
+  </form>
+</app-template-container>

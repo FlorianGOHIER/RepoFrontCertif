@@ -32,6 +32,12 @@ export class MessagesService {
     return this.httpClient.post<Message>(`${this.urlApi}/message`, message);
   }
 
+  public getMessageById(id: number) {
+    return this.httpClient.get<Message>(
+      `${this.urlApi}/message/messageId/${id}`
+    );
+  }
+
   // public delete(message: Message): Observable<Message> {
   //   return this.httpClient
   //     .delete<Message>(`${this.urlApi}/message`,message)
