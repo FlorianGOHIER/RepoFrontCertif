@@ -13,9 +13,12 @@
       <ng-content select=".tr-header"></ng-content>
     </span>
 
-    <span (click)="jourNuit()">
-      <ng-content *ngIf="lum" select=".tr-nuit"></ng-content>
-      <ng-content *ngIf="!lum" select=".tr-jour"></ng-content>
+    <span>
+      <a class="connection" href="/sign-in">Se connecter</a>
+      <span (click)="jourNuit()">
+        <ng-content *ngIf="lum" select=".tr-nuit"></ng-content>
+        <ng-content *ngIf="!lum" select=".tr-jour"></ng-content>
+      </span>
     </span>
   </div>
 
