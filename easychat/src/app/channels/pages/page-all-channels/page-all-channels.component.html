@@ -1,35 +1,16 @@
-<app-template-container title="Tous les canaux...">
-  <!-- <div *ngIf="channels$ |async as collection">
-    <div *ngFor="let channel of collection">
-      <div class="card-deck ">
-        <div class="card">
-          <div class="card-body">
-            <h5 class="card-title">{{channel.name}}</h5>
-            <h6 class="card-title">Description :</h6>
-            <p class="card-text">{{channel.description}}</p>
-            <p class="card-text">{{channel.createdAt | dateFormat}}</p> -->
-  <!-- <div>{{channel.createdAt}}</div>
-          </div>
-          <div class="card-footer">
-            <small class="text-muted">{{channel.ownerId}}</small>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div> -->
-
+<app-template-container title="Liste des canaux">
   <div *ngIf="channels$ |async as collection">
-    <div *ngFor="let channel of collection">
-      <div class="list">
-        <div class="list__item">
-          <h5>{{channel.name}}</h5>
-          <h6>Description :</h6>
-          <p>{{channel.description}}</p>
-          <!-- <p>{{channel.createdAt | dateFormat}}</p> -->
+    <div class="card-deck" *ngFor="let channel of collection">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">{{channel.name}}</h5>
+          <h6 class="card-title">Description :</h6>
+          <p class="card-text">{{channel.description}}</p>
+        </div>
+        <div class="card-footer">
+          <small class="text-muted">Created at : {{channel.created_at}}</small>
         </div>
       </div>
     </div>
   </div>
-
-
 </app-template-container>
