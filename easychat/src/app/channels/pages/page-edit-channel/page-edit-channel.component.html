@@ -1,12 +1,13 @@
-<app-template-container title="Ajouter une channel">
+<app-template-container title="Modifier un canal">
   <form [formGroup]="form" (ngSubmit)="onSubmit()" *ngIf="item$ |async">
     <div class="form-group">
-      <label for="name">Type</label>
+      <label for="name">Nom du canal :</label>
       <input type="text" class="form-control" id="name" formControlName="name">
     </div>
     <div class="form-group">
+      <label for="description">Description :</label>
       <textarea rows="5" class="form-control" id="description" formControlName="description"></textarea>
     </div>
-    <app-btn type="submit" label="Envoyer"></app-btn>
+    <app-btn type="submit" label="Modifier"></app-btn>
   </form>
 </app-template-container>
