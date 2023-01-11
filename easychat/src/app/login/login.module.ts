@@ -6,10 +6,17 @@ import { PageSignInComponent } from './pages/page-sign-in/page-sign-in.component
 import { PageSignUpComponent } from './pages/page-sign-up/page-sign-up.component';
 import { PageResetComponent } from './pages/page-reset/page-reset.component';
 import { SharedModule } from '../shared/shared.module';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [PageSignInComponent, PageSignUpComponent, PageResetComponent],
-  imports: [CommonModule, LoginRoutingModule, SharedModule],
+  imports: [
+    CommonModule,
+    LoginRoutingModule,
+    SharedModule,
+    FormsModule,
+    ReactiveFormsModule,
+  ],
   exports: [PageSignInComponent, PageSignUpComponent, PageResetComponent],
 })
 export class LoginModule {}

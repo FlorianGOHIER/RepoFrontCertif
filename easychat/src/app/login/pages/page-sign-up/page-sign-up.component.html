@@ -1,1 +1,18 @@
-<p>page-sign-up works!</p>
+<app-template-container title="Enregistrez-vous">
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="username">Nom d'utilisateur :</label>
+      <input type="text" placeholder="Votre nom d'utilisateur..." class="form-control" id="username"
+        formControlName="username">
+    </div>
+    <div class="form-group">
+      <label for="email">Adresse mail :</label>
+      <input type="text" placeholder="Votre email..." class="form-control" id="email" formControlName="email">
+    </div>
+    <div class="form-group">
+      <label for="password">Mot de passe :</label>
+      <input type="password" class="form-control" id="password" formControlName="password">
+    </div>
+    <app-btn type="submit" label="S'enregistrer"></app-btn>
+  </form>
+</app-template-container>
