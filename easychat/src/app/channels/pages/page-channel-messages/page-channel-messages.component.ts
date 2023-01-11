@@ -46,9 +46,9 @@ export class PageChannelMessagesComponent {
     });
   }
 
-  // public deleteOrder(message: Message) {
-  //   this.messagesService.delete(message).subscribe();
-  // }
+  public deleteMessage(message: Message) {
+    this.messagesService.delete(message).subscribe();
+  }
 
   public onSubmit() {
     this.messagesService.add(this.form.value).subscribe();
