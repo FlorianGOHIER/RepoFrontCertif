@@ -12,7 +12,7 @@
     </div>
     <!-- Formulaire, création de message -->
     <div>
-      <form [formGroup]="form" (ngSubmit)="onSubmit(channel.id)">
+      <form [formGroup]="form" (ngSubmit)="onSubmit()">
         <div class="form-group">
           <textarea rows="5" placeholder="Saisissez votre message..." class="form-control" id="text"
             formControlName="text"></textarea>

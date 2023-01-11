@@ -50,9 +50,8 @@ export class PageChannelMessagesComponent {
   //   this.messagesService.delete(message).subscribe();
   // }
 
-  public onSubmit(id: number) {
+  public onSubmit() {
     this.messagesService.add(this.form.value).subscribe();
-    this.messagesService.refreshCollection(id);
   }
 
   public goToEdit(id: number) {
