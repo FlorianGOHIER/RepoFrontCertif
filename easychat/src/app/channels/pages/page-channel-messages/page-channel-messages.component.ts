@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { Channel } from 'src/app/core/models/channel';
 import { Message } from 'src/app/core/models/message';
@@ -22,7 +22,8 @@ export class PageChannelMessagesComponent {
     private messagesService: MessagesService,
     private channelsService: ChannelsService,
     private route: ActivatedRoute,
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
+    private router: Router
   ) {
     this.route.paramMap.subscribe((param) => {
       const id = Number(param.get('id'));
@@ -43,7 +44,8 @@ export class PageChannelMessagesComponent {
   //   this.messagesService.delete(message).subscribe();
   // }
 
-  public onSubmit() {
+  public onSubmit(id: number) {
     this.messagesService.add(this.form.value).subscribe();
+    this.messagesService.refreshCollection(id);
   }
 }

@@ -9,12 +9,12 @@
     </div>
     <!-- Formulaire, création de message -->
     <div>
-      <form [formGroup]="form" (ngSubmit)="onSubmit()">
+      <form [formGroup]="form" (ngSubmit)="onSubmit(channel.id)">
         <div class="form-group">
-          <label for="text">Message:</label>
-          <input type="text" class="form-control" id="text" formControlName="text">
+          <textarea rows="5" placeholder="Saisissez votre message..." class="form-control" id="text"
+            formControlName="text"></textarea>
         </div>
-        <app-btn type="submit" label="Submit"></app-btn>
+        <app-btn type="submit" label="Envoyer"></app-btn>
       </form>
     </div>
 

@@ -10,9 +10,9 @@ export class BtnComponent {
   @Input() public label!: string;
   @Input() public link!: string;
 
-  constructor(private router: Router) {}
+  // constructor(private router: Router) {}
 
-  redirect() {
-    this.router.navigate([this.link]);
-  }
+  // redirect() {
+  //   this.router.navigate([this.link]);
+  // }
 }
