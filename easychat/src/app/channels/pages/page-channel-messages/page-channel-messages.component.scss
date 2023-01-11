@@ -13,8 +13,17 @@
   border: 1px solid black;
   border-radius: 10px;
   background-color: antiquewhite;
-  padding: 1rem;
+  padding: 0.7rem;
   margin: 10px;
   text-align: left;
   width: 100vh;
+}
+.dateMessage{
+  font-size: 0.7em;
+  margin: 5px;
+}
+.userMessage{
+  font-size: 0.7em;
+  margin: 5px;
+  font-weight: bold;
 }

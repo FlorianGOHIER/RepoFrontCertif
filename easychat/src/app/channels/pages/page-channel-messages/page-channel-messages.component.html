@@ -2,10 +2,13 @@
   <div *ngIf="collection$ |async as collection" class="allMessages">
     <!-- Affichage des messages -->
     <div *ngFor="let message of collection" class="messageCapsule">
-      <span><app-icon-delete></app-icon-delete></span>
-      <span><app-icon-edit></app-icon-edit></span>
-      <span>{{message.updatedAt | dateFormat}}</span>
-      <p>{{message.text}}</p>
+      <div *ngIf="user$|async as user">
+        <span><app-icon-edit></app-icon-edit></span>
+        <span class="userMessage">{{user.username}}</span>
+        <span class="dateMessage">{{message.updatedAt | dateFormat}}</span>
+        <span><app-icon-delete></app-icon-delete></span>
+        <p>{{message.text}}</p>
+      </div>
     </div>
     <!-- Formulaire, création de message -->
     <div>

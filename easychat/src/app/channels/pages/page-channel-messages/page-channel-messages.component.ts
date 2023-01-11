@@ -4,8 +4,10 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { Channel } from 'src/app/core/models/channel';
 import { Message } from 'src/app/core/models/message';
+import { User } from 'src/app/core/models/user';
 import { ChannelsService } from 'src/app/core/services/channels.service';
 import { MessagesService } from 'src/app/core/services/messages.service';
+import { UsersService } from 'src/app/core/services/users.service';
 
 @Component({
   selector: 'app-page-channel-messages',
@@ -15,12 +17,14 @@ import { MessagesService } from 'src/app/core/services/messages.service';
 export class PageChannelMessagesComponent {
   public collection$!: BehaviorSubject<Message[]>;
   public channel$!: Observable<Channel>;
+  public user$!: Observable<User>;
   public form!: FormGroup;
   public message!: Message;
 
   constructor(
     private messagesService: MessagesService,
     private channelsService: ChannelsService,
+    private usersService: UsersService,
     private route: ActivatedRoute,
     private formBuilder: FormBuilder,
     private router: Router
@@ -37,6 +41,8 @@ export class PageChannelMessagesComponent {
         channelId: [id],
         userId: [this.message.userId],
       });
+
+      this.user$ = this.usersService.getUserById(this.message.userId);
     });
   }
 
