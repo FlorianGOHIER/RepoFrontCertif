@@ -9,6 +9,11 @@ const routes: Routes = [
       import('./channels/channels.module').then((m) => m.ChannelsModule),
   },
   {
+    path: 'messages',
+    loadChildren: () =>
+      import('./messages/messages.module').then((m) => m.MessagesModule),
+  },
+  {
     path: '**',
     loadChildren: () =>
       import('./page-not-found/page-not-found.module').then(

@@ -54,4 +54,8 @@ export class PageChannelMessagesComponent {
     this.messagesService.add(this.form.value).subscribe();
     this.messagesService.refreshCollection(id);
   }
+
+  public goToEdit(id: number) {
+    this.router.navigate(['messages', id]);
+  }
 }
