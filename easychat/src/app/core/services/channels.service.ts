@@ -38,8 +38,8 @@ export class ChannelsService {
     return this.httpClient.put<Channel>(`${this.urlApi}/channel`, channel);
   }
 
-  public delete(channel: Channel) {
-    this.httpClient
+  public delete(channel: Channel): Observable<Channel> {
+    return this.httpClient
       .delete<Channel>(`${this.urlApi}/channel/${channel.id}`)
       .pipe(tap(() => this.refreshChannels()));
   }
