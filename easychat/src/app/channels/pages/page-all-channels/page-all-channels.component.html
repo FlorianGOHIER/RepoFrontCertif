@@ -1,17 +1,20 @@
 <app-template-container title="Liste des canaux">
-
   <div class="row row-cols-1 row-cols-md-3 g-4" *ngIf="channels$ |async as collection">
     <div class="col" *ngFor="let channel of collection">
-      <button [routerLink]="['/channels', channel.id]" routerLinkActive="active" class="card h-100">
+      <div class="card h-100">
         <div class="card-body">
-          <h5 class="card-title">{{channel.name}}</h5>
-          <h6 class="card-title">Description :</h6>
-          <p class="card-text">{{channel.description}}</p>
+          <span><app-icon-edit (click)="editChannel(channel.id)"></app-icon-edit></span>
+          <span><app-icon-delete (click)="deleteChannel(channel)"></app-icon-delete></span>
+          <button [routerLink]="['/channels', channel.id]" routerLinkActive="active">
+            <h5 class="card-title">{{channel.name}}</h5>
+            <h6 class="card-title">Description :</h6>
+            <p class="card-text">{{channel.description}}</p>
+          </button>
         </div>
         <div class="card-footer">
           <small class="text-muted">Created at : {{channel.created_at | dateFormat}}</small>
         </div>
-      </button>
+      </div>
     </div>
   </div>
 </app-template-container>
