@@ -1,1 +1,35 @@
-<p>page-all-channels works!</p>
+<app-template-container title="Tous les canaux...">
+  <!-- <div *ngIf="channels$ |async as collection">
+    <div *ngFor="let channel of collection">
+      <div class="card-deck ">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">{{channel.name}}</h5>
+            <h6 class="card-title">Description :</h6>
+            <p class="card-text">{{channel.description}}</p>
+            <p class="card-text">{{channel.createdAt | dateFormat}}</p> -->
+  <!-- <div>{{channel.createdAt}}</div>
+          </div>
+          <div class="card-footer">
+            <small class="text-muted">{{channel.ownerId}}</small>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div> -->
+
+  <div *ngIf="channels$ |async as collection">
+    <div *ngFor="let channel of collection">
+      <div class="list">
+        <div class="list__item">
+          <h5>{{channel.name}}</h5>
+          <h6>Description :</h6>
+          <p>{{channel.description}}</p>
+          <!-- <p>{{channel.createdAt | dateFormat}}</p> -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+</app-template-container>
