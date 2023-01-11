@@ -44,9 +44,9 @@ export class MessagesService {
     );
   }
 
-  // public delete(message: Message): Observable<Message> {
-  //   return this.httpClient
-  //     .delete<Message>(`${this.urlApi}/message`,message)
-  //     .pipe(tap(() => this.refreshCollection(message.id)));
-  // }
+  public delete(message: Message): Observable<Message> {
+    return this.httpClient
+      .delete<Message>(`${this.urlApi}/message/${message.id}`)
+      .pipe(tap(() => this.refreshCollection(message.channelId)));
+  }
 }
