@@ -8,6 +8,7 @@ import { PageAddChannelComponent } from './pages/page-add-channel/page-add-chann
 import { SharedModule } from '../shared/shared.module';
 import { IconsModule } from '../icons/icons.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { PageEditChannelComponent } from './pages/page-edit-channel/page-edit-channel.component';
 
 @NgModule({
   providers: [DatePipe],
@@ -15,6 +16,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     PageChannelMessagesComponent,
     PageAllChannelsComponent,
     PageAddChannelComponent,
+    PageEditChannelComponent,
   ],
   imports: [
     CommonModule,
@@ -28,6 +30,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     PageChannelMessagesComponent,
     PageAllChannelsComponent,
     PageAddChannelComponent,
+    PageEditChannelComponent,
   ],
 })
 export class ChannelsModule {}

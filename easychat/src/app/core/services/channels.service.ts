@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, Observable } from 'rxjs';
+import { BehaviorSubject, Observable, tap } from 'rxjs';
 import { environment } from 'src/environment/environment';
 import { Channel } from '../models/channel';
 
@@ -32,5 +32,15 @@ export class ChannelsService {
 
   public add(channel: Channel): Observable<Channel> {
     return this.httpClient.post<Channel>(`${this.urlApi}/channel`, channel);
+  }
+
+  public update(channel: Channel): Observable<Channel> {
+    return this.httpClient.put<Channel>(`${this.urlApi}/channel`, channel);
+  }
+
+  public delete(channel: Channel) {
+    this.httpClient
+      .delete<Channel>(`${this.urlApi}/channel/${channel.id}`)
+      .pipe(tap(() => this.refreshChannels()));
   }
 }
