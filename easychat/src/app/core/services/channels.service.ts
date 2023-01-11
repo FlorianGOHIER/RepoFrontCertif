@@ -13,12 +13,14 @@ export class ChannelsService {
 
   constructor(private httpClient: HttpClient) {
     this.urlApi = environment.urlApi;
-    //this.collection$ = new Observable<Channel[]>();
     this.collection$ = this.httpClient.get<Channel[]>(`${this.urlApi}/channel`);
-    //console.log(this.collection$);
   }
 
   getChannelById(id: number): Observable<Channel> {
     return this.httpClient.get<Channel>(`${this.urlApi}/channel/${id}`);
+  }
+
+  public add(channel: Channel): Observable<Channel> {
+    return this.httpClient.post<Channel>(`${this.urlApi}/channel`, channel);
   }
 }
